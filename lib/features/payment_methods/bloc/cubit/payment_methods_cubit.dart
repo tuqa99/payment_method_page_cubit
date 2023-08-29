@@ -10,10 +10,9 @@ class PaymentMethodsCubit extends Cubit<PaymentMethodsState> {
   addCard(String idCard, String cardName) {
     idCards.add(idCard);
     cardNames.add(cardName);
-
     print(idCard);
     print(idCards);
     print(cardNames);
-    emit(SaveCard(cardId: idCards, cardName: cardNames));
+    emit(SaveCard(idCards, cardNames));
   }
 }

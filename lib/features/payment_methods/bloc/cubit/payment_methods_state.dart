@@ -12,7 +12,7 @@ final class PaymentMethodsInitial extends PaymentMethodsState {}
 final class SaveCard extends PaymentMethodsState {
   List<String> cardId;
   List<String> cardName;
-  SaveCard({required this.cardId, required this.cardName});
+  SaveCard(this.cardId, this.cardName);
   @override
   List<Object> get props => [(cardId, cardName)];
 }

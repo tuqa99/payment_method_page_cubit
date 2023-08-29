@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:payment_methode/core/Compontants/new_card_form.dart';
+
 import 'package:payment_methode/core/config/colors.dart';
+import 'package:payment_methode/features/payment_methods/View/pages/new_card_form.dart';
 
 class AddCards extends StatefulWidget {
   const AddCards({super.key});

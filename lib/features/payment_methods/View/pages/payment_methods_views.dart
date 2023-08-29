@@ -29,7 +29,7 @@ class _PaymentMethodsViewsState extends State<PaymentMethodsViews> {
             SizedBox(
               height: 20,
             ),
-            Cards(),
+            // Cards(),
             AddedCards(),
             AddCards(),
             TashehCard(),

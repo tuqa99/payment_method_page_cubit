@@ -22,7 +22,6 @@ class _CardsState extends State<Cards> {
   ];
   int? selectedOption;
   Color borderColor = grey;
-  final List<bool> _selected = List.generate(3, (index) => false);
   @override
   Widget build(BuildContext context) {
     return Container(

@@ -32,7 +32,7 @@ class _SaveButtonState extends State<SaveButton> {
               setState(() {
                 print('########################');
                 print(widget.CardId.length);
-                if (widget.CardId.length == 12) {
+                if (widget.CardId.length == 12 && widget.CardName.isNotEmpty) {
                   print(widget.CardId);
                   BlocProvider.of<PaymentMethodsCubit>(context)
                       .addCard(widget.CardId, widget.CardName);
@@ -52,7 +52,9 @@ class _SaveButtonState extends State<SaveButton> {
           height: 50,
           width: 360,
           child: CupertinoButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.of(context).pop();
+            },
             color: purple,
             child: const Text('Cancel'),
           ),

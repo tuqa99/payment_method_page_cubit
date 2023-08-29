@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:payment_methode/core/Compontants/textfields.dart';
-import 'package:payment_methode/features/payment_methods/View/Widgets/new_card_info.dart';
+import 'package:payment_methode/features/payment_methods/View/Widgets/month_dropdbutton.dart';
 import 'package:payment_methode/features/payment_methods/View/Widgets/save_button.dart';
+import 'package:payment_methode/features/payment_methods/View/Widgets/vcc_number.dart';
+import 'package:payment_methode/features/payment_methods/View/Widgets/year_dropButton.dart';
 
 class NewCardForm extends StatefulWidget {
   const NewCardForm({super.key});
@@ -34,7 +36,13 @@ class _NewCardFormState extends State<NewCardForm> {
               title: 'Card Number',
               hintText: '   Enter 12 digit card number',
             ),
-            const NewCardInfo(),
+            const Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  MonthDropButton(),
+                  YearDropButton(),
+                  VccNumber(),
+                ]),
             const SizedBox(
               height: 5,
             ),
