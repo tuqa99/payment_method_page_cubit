@@ -1,6 +1,8 @@
-class GetInfo {
+class CardInfo {
   String? cardId;
   String? cardName;
 
-  GetInfo({this.cardId, this.cardName});
+  CardInfo({this.cardId, this.cardName});
+
+  substring(param0) {}
 }

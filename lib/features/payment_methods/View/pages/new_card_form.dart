@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:payment_methode/core/Compontants/textfields.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:payment_methode/core/Components/text_fields.dart';
 import 'package:payment_methode/features/payment_methods/View/Widgets/month_dropdbutton.dart';
 import 'package:payment_methode/features/payment_methods/View/Widgets/save_button.dart';
 import 'package:payment_methode/features/payment_methods/View/Widgets/vcc_number.dart';
-import 'package:payment_methode/features/payment_methods/View/Widgets/year_dropButton.dart';
+import 'package:payment_methode/features/payment_methods/View/Widgets/year_drop_button.dart';
+import 'package:payment_methode/features/payment_methods/bloc/cubit/payment_methods_cubit.dart';
 
 class NewCardForm extends StatefulWidget {
   const NewCardForm({super.key});
@@ -17,6 +19,16 @@ class _NewCardFormState extends State<NewCardForm> {
   TextEditingController id = TextEditingController();
   TextEditingController name = TextEditingController();
   List<String> controller = [];
+  callBack() {
+    setState(() {
+      if ((id.text.length == 12) && (name.text.isNotEmpty)) {
+        BlocProvider.of<PaymentMethodsCubit>(context)
+            .addCard(id.text.toString(), name.text.toString());
+        Navigator.of(context).pop();
+      }
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
@@ -31,10 +43,10 @@ class _NewCardFormState extends State<NewCardForm> {
               'Add New Card',
               style: Theme.of(context).textTheme.titleLarge,
             ),
-            TitleTextFelid(
+            TitleTextField(
               controller: id,
               title: 'Card Number',
-              hintText: '   Enter 12 digit card number',
+              hintText: 'Enter 12 digit card number',
             ),
             const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -46,26 +58,28 @@ class _NewCardFormState extends State<NewCardForm> {
             const SizedBox(
               height: 5,
             ),
-            TitleTextFelid(
+            TitleTextField(
               controller: name,
-              title: ' Card Holder\'s Name',
-              hintText: '   Name on Card',
+              title: 'Card Holder\'s Name',
+              hintText: 'Name on Card',
             ),
-            CheckboxListTile(
-              controlAffinity: ListTileControlAffinity.leading,
-              title: const Text(
-                'Make This Default Payment',
-              ),
-              value: _checkBox,
-              onChanged: (value) {
-                setState(() {
-                  _checkBox = value!;
-                });
-              },
+            Row(
+              children: [
+                Checkbox(
+                  value: _checkBox,
+                  onChanged: (value) {
+                    setState(() {
+                      _checkBox = value!;
+                    });
+                  },
+                ),
+                const Text(
+                  'Make This Default Payment',
+                ),
+              ],
             ),
             SaveButton(
-              CardId: id.text,
-              CardName: name.text,
+              onPressed: callBack,
             ),
           ],
         ),

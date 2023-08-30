@@ -22,7 +22,7 @@ class _VccNumberState extends State<VccNumber> {
           '  CVV',
           style: TextStyle(fontWeight: FontWeight.bold),
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         Container(

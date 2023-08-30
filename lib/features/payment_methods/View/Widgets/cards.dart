@@ -24,33 +24,33 @@ class _CardsState extends State<Cards> {
   Color borderColor = grey;
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 200,
-      margin: const EdgeInsets.all(18),
-      child: ListView.builder(
-        itemCount: cardsName.length,
-        itemBuilder: (context, index) {
+    return Wrap(
+      children: List.generate(
+        cardsName.length,
+        (index) {
           return Column(
             children: [
-              ListTile(
-                tileColor: grey,
-                focusColor: grey,
-                shape: RoundedRectangleBorder(
-                  side: BorderSide(width: 2, color: borderColor),
-                  borderRadius: BorderRadius.circular(15),
-                ),
-                selectedTileColor: purple,
-                leading: Image.asset(cardsIconsPath[index]),
-                title: Text(cardsName[index]),
-                trailing: Radio<int>(
-                  value: index,
-                  groupValue: selectedOption,
-                  onChanged: (int? value) {
-                    setState(() {
-                      selectedOption = value;
-                      print("Selected Option: $selectedOption");
-                    });
-                  },
+              Container(
+                margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 13),
+                child: ListTile(
+                  tileColor: grey,
+                  focusColor: grey,
+                  shape: RoundedRectangleBorder(
+                    side: BorderSide(width: 2, color: borderColor),
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  selectedTileColor: purple,
+                  leading: Image.asset(cardsIconsPath[index]),
+                  title: Text(cardsName[index]),
+                  trailing: Radio<int>(
+                    value: index,
+                    groupValue: selectedOption,
+                    onChanged: (int? value) {
+                      setState(() {
+                        selectedOption = value;
+                      });
+                    },
+                  ),
                 ),
               ),
               const SizedBox(

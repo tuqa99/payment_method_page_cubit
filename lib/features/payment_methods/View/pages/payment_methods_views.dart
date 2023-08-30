@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:payment_methode/features/payment_methods/View/Widgets/InfoInvoice.dart';
+import 'package:payment_methode/features/payment_methods/View/Widgets/info_invoice.dart';
 import 'package:payment_methode/features/payment_methods/View/Widgets/add_card_button.dart';
 import 'package:payment_methode/features/payment_methods/View/Widgets/added_cards.dart';
-import 'package:payment_methode/features/payment_methods/View/Widgets/cards.dart';
 import 'package:payment_methode/features/payment_methods/View/Widgets/header.dart';
 import 'package:payment_methode/features/payment_methods/View/Widgets/invoice.dart';
 import 'package:payment_methode/features/payment_methods/View/Widgets/tasheh_card.dart';
@@ -18,6 +17,8 @@ class _PaymentMethodsViewsState extends State<PaymentMethodsViews> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
+      backgroundColor: Colors.white,
+      resizeToAvoidBottomInset: false,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(50.0),
         child: Header(),

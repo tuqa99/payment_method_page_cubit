@@ -1,17 +1,14 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:payment_methode/core/config/colors.dart';
-import 'package:payment_methode/features/payment_methods/bloc/cubit/payment_methods_cubit.dart';
 
 class SaveButton extends StatefulWidget {
-  SaveButton({
+  const SaveButton({
     super.key,
-    required this.CardId,
-    required this.CardName,
+    required this.onPressed,
   });
-  String CardId;
-  String CardName;
+
+  final Function() onPressed;
 
   @override
   State<SaveButton> createState() => _SaveButtonState();
@@ -24,25 +21,17 @@ class _SaveButtonState extends State<SaveButton> {
       children: [
         Container(
           decoration: BoxDecoration(
-              border: Border.all(), borderRadius: BorderRadius.circular(12)),
+              color: Colors.white,
+              border: Border.all(),
+              borderRadius: BorderRadius.circular(12)),
           width: 360,
           height: 50,
-          child: ElevatedButton(
-            onPressed: () {
-              setState(() {
-                print('########################');
-                print(widget.CardId.length);
-                if (widget.CardId.length == 12 && widget.CardName.isNotEmpty) {
-                  print(widget.CardId);
-                  BlocProvider.of<PaymentMethodsCubit>(context)
-                      .addCard(widget.CardId, widget.CardName);
-                  Navigator.of(context).pop();
-                  widget.CardId = '';
-                  widget.CardName = '';
-                }
-              });
-            },
-            child: const Text('Save Card'),
+          child: MaterialButton(
+            onPressed: widget.onPressed,
+            child: const Text(
+              'Save Card',
+              style: TextStyle(color: Colors.black),
+            ),
           ),
         ),
         const SizedBox(
@@ -51,12 +40,15 @@ class _SaveButtonState extends State<SaveButton> {
         SizedBox(
           height: 50,
           width: 360,
-          child: CupertinoButton(
+          child: MaterialButton(
             onPressed: () {
               Navigator.of(context).pop();
             },
             color: purple,
-            child: const Text('Cancel'),
+            child: const Text(
+              'Cancel',
+              style: TextStyle(color: Colors.white, fontSize: 15),
+            ),
           ),
         ),
         const SizedBox(

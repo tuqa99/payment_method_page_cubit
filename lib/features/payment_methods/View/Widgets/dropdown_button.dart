@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 
 class DropDownButtonWidget extends StatefulWidget {
   DropDownButtonWidget({
+    super.key,
     required this.dropdownvalue,
     required this.myList,
   });
-  String? dropdownvalue;
-  List<String> myList;
+  late final String dropdownvalue;
+  final List<String> myList;
 
   @override
   State<DropDownButtonWidget> createState() => _DropDownButtonWidgetState();

@@ -24,9 +24,13 @@ class _AddCardsState extends State<AddCards> {
             setState(
               () {
                 showModalBottomSheet(
+                  isScrollControlled: true,
                   context: context,
                   builder: (context) {
-                    return const NewCardForm();
+                    return Padding(
+                        padding: EdgeInsets.only(
+                            bottom: MediaQuery.of(context).viewInsets.bottom),
+                        child: const NewCardForm());
                   },
                 );
               },

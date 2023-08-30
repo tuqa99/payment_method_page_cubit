@@ -13,13 +13,13 @@ class _HeaderState extends State<Header> {
   @override
   Widget build(BuildContext context) {
     return AppBar(
+      elevation: 0,
       titleSpacing: 30,
       leadingWidth: 70,
       centerTitle: true,
       systemOverlayStyle:
           const SystemUiOverlayStyle(statusBarColor: Colors.white),
-      backgroundColor: white,
-      elevation: 0,
+      backgroundColor: Colors.white,
       leading: Container(
         height: MediaQuery.of(context).size.height * 0.05,
         width: MediaQuery.of(context).size.width * 0.09,

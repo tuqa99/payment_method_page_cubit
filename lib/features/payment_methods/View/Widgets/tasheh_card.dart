@@ -11,25 +11,30 @@ class TashehCard extends StatefulWidget {
 }
 
 class _TashehCardState extends State<TashehCard> {
-  bool valuein = false;
+  bool valueIn = false;
   @override
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
           border: Border.all(color: purple),
           borderRadius: BorderRadius.circular(10)),
-      margin: EdgeInsets.all(12),
+      margin: const EdgeInsets.all(12),
       child: CheckboxListTile(
+        side: MaterialStateBorderSide.resolveWith(
+          (states) => BorderSide(width: 1.0, color: purple),
+        ),
+        checkColor: purple,
+        activeColor: Colors.white,
         tileColor: grey,
         controlAffinity: ListTileControlAffinity.leading,
-        value: valuein,
+        value: valueIn,
         onChanged: (value) {
           setState(() {
-            valuein = value!;
+            valueIn = value!;
           });
         },
         shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(15.0), // Optionally
+          borderRadius: BorderRadius.circular(15.0),
           side: const BorderSide(color: grey),
         ),
         title: Row(
