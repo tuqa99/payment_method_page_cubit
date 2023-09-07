@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:payment_methode/features/payment_methods/bloc/tasheh_balance/tasheh_balance_cubit.dart';
 
 class Invoice extends StatefulWidget {
   const Invoice({super.key});
@@ -22,8 +24,28 @@ class _InvoiceState extends State<Invoice> {
         children: [
           Text('Your Tasheh Summary',
               style: Theme.of(context).textTheme.titleSmall),
-          Text('Total JD 180', style: Theme.of(context).textTheme.titleSmall),
+          const SizedBox(
+            width: 30,
+          ),
+          Row(children: [
+            Text('Total JD ', style: Theme.of(context).textTheme.titleSmall),
+            BlocBuilder<TashehBalanceCubit, TashehBalanceState>(
+              builder: (context, state) {
+                if (state is TashehBalanceLoaded) {
+                  final balance = state.total;
+
+                  // Return the Text widget here
+                  return Text('$balance');
+                } else {
+                  return const SizedBox();
+                }
+              },
+            ),
+          ])
         ],
+      ),
+      const SizedBox(
+        width: 30,
       ),
       const SizedBox(
         height: 5,
@@ -36,7 +58,13 @@ class _InvoiceState extends State<Invoice> {
         children: [
           Text('Saturday , October 20 ,2022',
               style: Theme.of(context).textTheme.bodySmall),
+          const SizedBox(
+            width: 30,
+          ),
           Text('JD 90', style: Theme.of(context).textTheme.bodySmall),
+          const SizedBox(
+            width: 30,
+          ),
         ],
       ),
       const SizedBox(
@@ -48,7 +76,7 @@ class _InvoiceState extends State<Invoice> {
           Text('9PM-8AM Nighttime',
               style: Theme.of(context).textTheme.bodySmall),
           const SizedBox(
-            width: 80,
+            width: 190,
           ),
         ],
       ),
@@ -60,7 +88,13 @@ class _InvoiceState extends State<Invoice> {
         children: [
           Text('Friday , October 21 ,2022',
               style: Theme.of(context).textTheme.bodySmall),
+          const SizedBox(
+            width: 60,
+          ),
           Text('JD 80', style: Theme.of(context).textTheme.bodySmall),
+          const SizedBox(
+            width: 30,
+          ),
         ],
       ),
       const SizedBox(
@@ -72,7 +106,7 @@ class _InvoiceState extends State<Invoice> {
           Text('9PM-8AM Nighttime',
               style: Theme.of(context).textTheme.bodySmall),
           const SizedBox(
-            width: 80,
+            width: 190,
           ),
         ],
       ),

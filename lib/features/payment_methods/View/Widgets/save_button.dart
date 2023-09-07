@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:payment_methode/core/config/colors.dart';
 
@@ -44,7 +43,7 @@ class _SaveButtonState extends State<SaveButton> {
             onPressed: () {
               Navigator.of(context).pop();
             },
-            color: purple,
+            color: AppColors.purple01,
             child: const Text(
               'Cancel',
               style: TextStyle(color: Colors.white, fontSize: 15),

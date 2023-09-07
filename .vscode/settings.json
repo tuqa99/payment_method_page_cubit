@@ -9,5 +9,7 @@
     "Roboto",
     "seeklogo",
     "tasheh"
-  ]
+  ],
+  "cmake.configureOnOpen": true,
+  "cmake.sourceDirectory": "D:/Flutter Apps/payment_method/windows"
 }

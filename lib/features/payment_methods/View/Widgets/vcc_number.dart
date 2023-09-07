@@ -56,7 +56,7 @@ class _VccNumberState extends State<VccNumber> {
               hintText: 'CVV',
               hintStyle: const TextStyle(color: Colors.grey),
               enabledBorder: const OutlineInputBorder(
-                borderSide: BorderSide(width: 2, color: grey),
+                borderSide: BorderSide(width: 2, color: AppColors.gray),
               ),
             ),
           ),

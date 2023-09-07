@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:payment_methode/core/config/colors.dart';
-import 'package:payment_methode/features/payment_methods/bloc/cubit/payment_methods_cubit.dart';
+import 'package:payment_methode/features/payment_methods/bloc/add_payment_methode/payment_methods_cubit.dart';
 
 class AddedCards extends StatefulWidget {
   const AddedCards({super.key});
@@ -30,13 +30,16 @@ class _AddedCardsState extends State<AddedCards> {
                       margin: const EdgeInsets.symmetric(
                           vertical: 3, horizontal: 13),
                       child: ListTile(
-                        tileColor: grey,
-                        focusColor: grey,
+                        tileColor: AppColors.gray,
+                        focusColor: AppColors.gray,
                         shape: RoundedRectangleBorder(
-                          side: const BorderSide(width: 2, color: grey),
+                          side: const BorderSide(
+                            width: 2,
+                            color: AppColors.gray,
+                          ),
                           borderRadius: BorderRadius.circular(15),
                         ),
-                        selectedTileColor: purple,
+                        selectedTileColor: AppColors.purple01,
                         leading: SizedBox(
                           height: 40,
                           width: 40,
@@ -58,7 +61,6 @@ class _AddedCardsState extends State<AddedCards> {
                           onChanged: (int? value) {
                             setState(() {
                               selectedOption = value;
-                              print("Selected Option: $selectedOption");
                             });
                           },
                         ),

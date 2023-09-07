@@ -44,7 +44,10 @@ class _TitleTextFieldState extends State<TitleTextField> {
             alignLabelWithHint: true,
             hintStyle: const TextStyle(color: Colors.grey),
             enabledBorder: const OutlineInputBorder(
-              borderSide: BorderSide(width: 2, color: grey),
+              borderSide: BorderSide(
+                width: 2,
+                color: AppColors.gray,
+              ),
             ),
           ),
         ),

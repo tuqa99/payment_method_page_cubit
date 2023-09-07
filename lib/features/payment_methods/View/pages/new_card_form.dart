@@ -5,7 +5,7 @@ import 'package:payment_methode/features/payment_methods/View/Widgets/month_drop
 import 'package:payment_methode/features/payment_methods/View/Widgets/save_button.dart';
 import 'package:payment_methode/features/payment_methods/View/Widgets/vcc_number.dart';
 import 'package:payment_methode/features/payment_methods/View/Widgets/year_drop_button.dart';
-import 'package:payment_methode/features/payment_methods/bloc/cubit/payment_methods_cubit.dart';
+import 'package:payment_methode/features/payment_methods/bloc/add_payment_methode/payment_methods_cubit.dart';
 
 class NewCardForm extends StatefulWidget {
   const NewCardForm({super.key});

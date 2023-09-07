@@ -24,7 +24,7 @@ class _HeaderState extends State<Header> {
         height: MediaQuery.of(context).size.height * 0.05,
         width: MediaQuery.of(context).size.width * 0.09,
         decoration: BoxDecoration(
-          border: Border.all(color: grey),
+          border: Border.all(color: AppColors.gray),
           borderRadius: BorderRadius.circular(5),
         ),
         child: const Padding(

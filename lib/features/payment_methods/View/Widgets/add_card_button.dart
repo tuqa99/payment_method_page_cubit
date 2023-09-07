@@ -37,14 +37,15 @@ class _AddCardsState extends State<AddCards> {
             );
           },
           child: Container(
-            height: 30,
-            width: 30,
+            height: 24,
+            width: 24,
             decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(10), color: purpleOpacity),
-            child: Icon(
+                borderRadius: BorderRadius.circular(6),
+                color: AppColors.purple02.withOpacity(0.15)),
+            child: const Icon(
               Icons.add,
               size: 18,
-              color: purple,
+              color: AppColors.purple01,
             ),
           ),
         ),
@@ -53,7 +54,7 @@ class _AddCardsState extends State<AddCards> {
         ),
         Text(
           'Add New Card',
-          style: Theme.of(context).textTheme.titleMedium,
+          style: Theme.of(context).textTheme.labelSmall,
         )
       ],
     );

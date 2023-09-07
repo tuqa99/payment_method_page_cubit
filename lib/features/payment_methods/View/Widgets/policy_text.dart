@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: must_be_immutable
 class PolicyText extends StatefulWidget {
   PolicyText({
     super.key,
@@ -22,12 +23,10 @@ class _PolicyTextState extends State<PolicyText> {
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Row(
           children: [
-            const SizedBox(
-              width: 40,
-            ),
             Checkbox(
               value: widget.checkBox,
               onChanged: (value) {
@@ -71,9 +70,10 @@ class _PolicyTextState extends State<PolicyText> {
           ],
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             const SizedBox(
-              width: 90,
+              width: 50,
             ),
             Text(
               ' refund policy ',

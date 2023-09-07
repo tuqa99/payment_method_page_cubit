@@ -21,7 +21,7 @@ class _CardsState extends State<Cards> {
     'efawteercom'
   ];
   int? selectedOption;
-  Color borderColor = grey;
+  Color borderColor = AppColors.gray;
   @override
   Widget build(BuildContext context) {
     return Wrap(
@@ -33,13 +33,13 @@ class _CardsState extends State<Cards> {
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 3, horizontal: 13),
                 child: ListTile(
-                  tileColor: grey,
-                  focusColor: grey,
+                  tileColor: AppColors.gray,
+                  focusColor: AppColors.gray,
                   shape: RoundedRectangleBorder(
                     side: BorderSide(width: 2, color: borderColor),
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  selectedTileColor: purple,
+                  selectedTileColor: AppColors.purple01,
                   leading: Image.asset(cardsIconsPath[index]),
                   title: Text(cardsName[index]),
                   trailing: Radio<int>(
